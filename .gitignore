@@ -1,7 +1,8 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# Dependencies
 node_modules/
+npm-debug.*
+yarn-debug.*
+yarn-error.*
 
 # Expo
 .expo/
@@ -9,35 +10,64 @@ dist/
 web-build/
 expo-env.d.ts
 
-# Native
-.kotlin/
-*.orig.*
+# Native Android Build & Cache
+android/.gradle/
+android/build/
+android/app/build/
+android/.cxx/
+android/app/.cxx/
+android/local.properties
+android/.idea/
+android/*.iml
+android/app/*.iml
+android/.kotlin/
+android/captures/
+android/.externalNativeBuild/
+android/app/.externalNativeBuild/
+
+# Native iOS (if generated)
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace/xcuserdata/
+ios/*.xcodeproj/xcuserdata/
+
+# Keystores & Signing Secrets
 *.jks
+*.keystore
 *.p8
 *.p12
 *.key
 *.mobileprovision
 
-# Metro
+# Compiled Binaries & Outputs
+*.apk
+*.aab
+*.ipa
+
+# Metro Bundler
 .metro-health-check*
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
-*.pem
-
-# local env files
+# Environment Variables & Secrets
+.env
+.env.local
 .env*.local
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 
-example
+# Operating System Files
+.DS_Store
+*.pem
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
 
-# generated native folders
-/ios
-/android
+# IDE & Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.orig.*
